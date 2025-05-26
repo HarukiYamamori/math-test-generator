@@ -24,7 +24,7 @@ if not GOOGLE_API_KEY:
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Generative AIモデルの設定
-model_name = "gemini-1.5-flash"
+model_name = "gemini-2.5-flash-preview-05-20"
 generation_config = {"response_mime_type": "application/json"}
 generator = MathTestGenerator(model_name, generation_config)
 

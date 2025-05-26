@@ -14,7 +14,12 @@ class MathTestGenerator:
             '解答は、問題文、解答、解説のキーを持つJSONオブジェクトとして出力し、JSONオブジェクトのキーは、'
             '"problem", "answer", "explanation"としてください。また、JSONオブジェクトのルートキーは必ず '
             '"questions" にし、全て日本語で出力してください。'
+            '数式を含む場合は改行なしLaTeX形式で記述し、バックスラッシュ（\\）はJSONの仕様に従って2重（\\\\）にエスケープしてください。'
+            'これはJavaScriptのJSON.parseで正しく読み込めるようにするためです（例：\\frac{a}{b} → "\\\\frac{a}{b}"）。'
+            'また改行は<br>, 太字は<strong>などHTMLタグで表現してください。'
         )
+
+
         try:
             # AIにリクエストを送信
             response = self.model.generate_content(prompt)
